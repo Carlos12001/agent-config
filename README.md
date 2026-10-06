@@ -20,6 +20,17 @@ Global rules for the AI coding agents I use. They apply to every repository on m
 
 The full text is in [`AGENTS.md`](AGENTS.md).
 
+## Where the rules apply
+
+| Where | Applies? |
+|---|---|
+| Claude Code on a machine where `install.sh` was run | Yes, in every folder. Rules are read when a session starts, so a change reaches new sessions, not ones already open |
+| A machine where `install.sh` was not run | No |
+| Claude on the web or in the mobile app | No: those chats do not read files from the machine |
+| Other agents (GitHub Copilot, OpenClaw and so on) | Not globally. Each reads its own global file; see "Other agents" below |
+
+The rules only say that the context vault exists. Its notes are not loaded automatically: an agent reads them when they are needed.
+
 ## Installation
 
 ### Linux / macOS

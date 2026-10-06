@@ -20,6 +20,17 @@ Reglas globales para los agentes de IA de programación que uso. Se aplican a to
 
 El texto completo está en [`AGENTS.md`](AGENTS.md).
 
+## Dónde aplican las reglas
+
+| Dónde | ¿Aplican? |
+|---|---|
+| Claude Code en un equipo donde se ejecutó `install.sh` | Sí, en cualquier carpeta. Las reglas se leen al iniciar una sesión, así que un cambio llega a las sesiones nuevas, no a las ya abiertas |
+| Un equipo donde no se ejecutó `install.sh` | No |
+| Claude en la web o en la app del teléfono | No: esos chats no leen archivos del equipo |
+| Otros agentes (GitHub Copilot, OpenClaw, etc.) | No de forma global. Cada uno lee su propio archivo global; ver "Otros agentes" más abajo |
+
+Las reglas solo dicen que la bóveda de contexto existe. Sus notas no se cargan solas: un agente las lee cuando hacen falta.
+
 ## Instalación
 
 ### Linux / macOS
