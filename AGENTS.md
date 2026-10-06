@@ -43,12 +43,11 @@ Every repository must have two READMEs:
 
 ## Temporary files and logs
 
-Never leave files where they do not belong. Do not write logs, temporary files, backups or scratch output in the home folder, the desktop, the current directory, next to a script, or inside a repository's working tree.
+Never leave files where they do not belong. Do not write logs, temporary files, backups or scratch output in the home folder, the desktop, the current directory, next to a script, next to the file they belong to, or inside a repository's working tree.
 
 ### Default: create nothing
 
 - A script prints its progress to the terminal. Write a log file only when the output must outlive the run, for example a background service or a long detached job.
-- Do not make a backup copy (`*.bak`) unless the owner asks, or the change cannot be undone otherwise. If you make one, say where it is and remove it once the change is confirmed.
 
 ### Temporary files
 
@@ -76,6 +75,21 @@ Unless the owner asks for a specific place, a log goes where the operating syste
 - Keep logs bounded: rotate them or keep only the last few runs.
 - Never write passwords, tokens or keys to a log.
 - Tell the owner where the log is when you create one.
+
+### Backups
+
+Before changing a configuration file, or any file that is not tracked by Git, make a backup copy. A backup is temporary too, so it never stays next to the original: it goes in one fixed place.
+
+| System | Where |
+|---|---|
+| Linux, macOS | `${XDG_STATE_HOME:-~/.local/state}/backups/<app>/` |
+| Windows | `%LOCALAPPDATA%\Backups\<App>\` |
+
+- Name it `<original name>.<YYYYMMDD-HHMMSS>.bak`, so several backups of the same file do not collide and their age is visible.
+- Create the folder with access for the owner only (`chmod 700`): configuration files often hold tokens.
+- Tell the owner the full path of the backup when you make it.
+- Backups older than 30 days are deleted the next time you write one for the same program. Delete one earlier when the owner confirms the change works.
+- A file tracked by Git needs no backup: the history is the backup.
 
 ### Other program data
 
