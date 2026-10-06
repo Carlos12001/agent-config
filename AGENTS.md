@@ -72,7 +72,7 @@ Unless the owner asks for a specific place, a log goes where the operating syste
 | macOS | `~/Library/Logs/<app>/` | `/Library/Logs/<app>/` |
 | Windows | `%LOCALAPPDATA%\<App>\Logs\` | `%ProgramData%\<App>\Logs\`, or the Event Log |
 
-- Keep logs bounded: rotate them or keep only the last few runs.
+- Keep logs small: at most 5 files and 10 MB in total per program. Rotate, and delete the oldest when a limit is reached.
 - Never write passwords, tokens or keys to a log.
 - Tell the owner where the log is when you create one.
 
@@ -88,16 +88,21 @@ Before changing a configuration file, or any file that is not tracked by Git, ma
 - Name it `<original name>.<YYYYMMDD-HHMMSS>.bak`, so several backups of the same file do not collide and their age is visible.
 - Create the folder with access for the owner only (`chmod 700`): configuration files often hold tokens.
 - Tell the owner the full path of the backup when you make it.
-- Backups older than 30 days are deleted the next time you write one for the same program. Delete one earlier when the owner confirms the change works.
+- Keep few of them: at most 5 backups per file, and none older than 30 days. Delete the extra ones the next time you write a backup for the same program, and delete one earlier when the owner confirms the change works.
 - A file tracked by Git needs no backup: the history is the backup.
 
-### Other program data
+### Configuration and data folders stay clean
+
+`~/.config` and `~/.local/share` (on Windows, `%APPDATA%`) hold only what a program needs in order to work. Nothing disposable goes there: no logs, no backups, no caches, no temporary or scratch files, no downloads.
 
 | Kind | Linux | Windows |
 |---|---|---|
-| Configuration | `${XDG_CONFIG_HOME:-~/.config}/<app>/` | `%APPDATA%\<App>\` |
-| Cache (safe to delete) | `${XDG_CACHE_HOME:-~/.cache}/<app>/` | `%LOCALAPPDATA%\<App>\Cache\` |
-| Data the program owns | `${XDG_DATA_HOME:-~/.local/share}/<app>/` | `%LOCALAPPDATA%\<App>\` |
+| Configuration the program reads | `${XDG_CONFIG_HOME:-~/.config}/<app>/` | `%APPDATA%\<App>\` |
+| Data the program cannot recreate | `${XDG_DATA_HOME:-~/.local/share}/<app>/` | `%LOCALAPPDATA%\<App>\` |
+| Cache, anything that can be recreated | `${XDG_CACHE_HOME:-~/.cache}/<app>/` | `%LOCALAPPDATA%\<App>\Cache\` |
+| Logs and backups | `${XDG_STATE_HOME:-~/.local/state}/`, as described above | `%LOCALAPPDATA%`, as described above |
+
+Before adding a file to a configuration or data folder, ask whether the program would break without it. If not, it does not belong there.
 
 ### Before finishing
 
