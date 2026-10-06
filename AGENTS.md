@@ -43,9 +43,9 @@ Every repository must have two READMEs:
 
 ## Context vault
 
-The owner keeps a private notes vault at `~/Repos/storyline` with the story of what he works on, so that any agent can get up to date.
+The owner keeps a private notes vault at `~/Repos/storyline` with the story of what they work on, so that any agent can get up to date.
 
-- For background on his machines, projects and past decisions, read `Home.md` and `Open Threads.md` there.
-- When he says **"crea contexto"** ("create context"), update that vault with what happened in the current session, following the vault's own `AGENTS.md`.
-- Commit there, but never push: publishing needs his password, which he types himself with `storyline push`. Never ask for the password in a chat and never bypass the push hook.
+- For background on their machines, projects and past decisions, read `Home.md` and `Open Threads.md` there.
+- When the owner says **"crea contexto"** ("create context"), update that vault with what happened in the current session, following the vault's own `AGENTS.md`.
+- Commit there, but never push: publishing needs the owner's password, which they type themselves with `storyline push`. Never ask for the password in a chat and never bypass the push hook.
 - The vault is private. Do not copy its content anywhere else.
