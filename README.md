@@ -12,6 +12,7 @@ Global rules for the AI coding agents I use. They apply to every repository on m
 
 ## The rules, in short
 
+- **Location:** every repository lives in `~/Repos`, unless an application needs it at a fixed path.
 - **Commits:** [Conventional Commits](https://www.conventionalcommits.org/) in every repository, in English, lowercase, imperative mood.
 - **README:** every repository has `README.md` in English (the main one) and `README.es.md` in Spanish, each linking to the other.
 - **Agent files:** `AGENTS.md` and `CLAUDE.md` are written in English.
@@ -23,14 +24,14 @@ The full text is in [`AGENTS.md`](AGENTS.md).
 ### Linux / macOS
 
 ```bash
-git clone git@github.com:Carlos12001/agent-config.git ~/Projects/agent-config
-~/Projects/agent-config/install.sh
+git clone git@github.com:Carlos12001/agent-config.git ~/Repos/agent-config
+~/Repos/agent-config/install.sh
 ```
 
 `install.sh` creates this symbolic link, so a `git pull` is enough to update the rules:
 
 ```text
-~/.claude/CLAUDE.md  →  ~/Projects/agent-config/AGENTS.md
+~/.claude/CLAUDE.md  →  ~/Repos/agent-config/AGENTS.md
 ```
 
 If `~/.claude/CLAUDE.md` already exists, it is renamed to `CLAUDE.md.bak-<date>` first. Running the script again changes nothing.
@@ -38,8 +39,8 @@ If `~/.claude/CLAUDE.md` already exists, it is renamed to `CLAUDE.md.bak-<date>`
 ### Windows
 
 ```powershell
-git clone git@github.com:Carlos12001/agent-config.git $HOME\Projects\agent-config
-Copy-Item $HOME\Projects\agent-config\AGENTS.md $HOME\.claude\CLAUDE.md
+git clone git@github.com:Carlos12001/agent-config.git $HOME\Repos\agent-config
+Copy-Item $HOME\Repos\agent-config\AGENTS.md $HOME\.claude\CLAUDE.md
 ```
 
 This is a copy, not a link: repeat the `Copy-Item` after every `git pull`.
