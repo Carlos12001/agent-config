@@ -12,10 +12,10 @@ Reglas globales para los agentes de IA de programación que uso. Se aplican a to
 
 ## Las reglas, en resumen
 
-- **Ubicación:** todo repositorio vive en `~/Repos`, excepto `~/ROMs` y los que una aplicación necesite en una ruta fija.
+- **Ubicación:** todo repositorio vive en `~/Repos`, excepto `~/ROMs` y `saves`, que siempre va dentro de la carpeta de configuración de RetroArch.
 - **Commits:** [Conventional Commits](https://www.conventionalcommits.org/) en todos los repositorios, en inglés, en minúscula y en imperativo.
 - **README:** todo repositorio tiene `README.md` en inglés (el principal) y `README.es.md` en español, cada uno con un enlace al otro.
-- **Bóveda de contexto:** con "crea contexto", el agente actualiza mi bóveda privada de notas; solo yo puedo publicarla.
+- **Bóveda de contexto:** existe una bóveda privada de contexto en `~/Repos/storyline`.
 - **Archivos para agentes:** `AGENTS.md` y `CLAUDE.md` se escriben en inglés.
 
 El texto completo está en [`AGENTS.md`](AGENTS.md).
