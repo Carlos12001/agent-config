@@ -15,6 +15,7 @@ Global rules for the AI coding agents I use. They apply to every repository on m
 - **Location:** every repository lives in `~/Repos`, except `~/ROMs` and `saves`, which always sits inside RetroArch's configuration folder.
 - **Commits:** [Conventional Commits](https://www.conventionalcommits.org/) in every repository, in English, lowercase, imperative mood.
 - **README:** every repository has `README.md` in English (the main one) and `README.es.md` in Spanish, each linking to the other.
+- **Temporary files and logs:** nothing is left in the home folder or in a repository. Temporary files go in the system's temporary folder and are removed; logs go where the operating system expects them (`~/.local/state/<app>/` on Linux, `%LOCALAPPDATA%\<App>\Logs\` on Windows), unless I ask for another place.
 - **Context vault:** a private context vault exists at `~/Repos/storyline`.
 - **Agent files:** `AGENTS.md` and `CLAUDE.md` are written in English.
 
