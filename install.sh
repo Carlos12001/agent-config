@@ -15,8 +15,13 @@ link_rules() {
     return
   fi
 
+  # A link to somewhere else (for example the repository was moved) is just replaced
+  if [[ -L "$target" ]]; then
+    rm "$target"
+  fi
+
   # Keep whatever was there before
-  if [[ -e "$target" || -L "$target" ]]; then
+  if [[ -e "$target" ]]; then
     local backup
     backup="$target.bak-$(date +%Y%m%d-%H%M%S)"
     mv "$target" "$backup"
