@@ -15,6 +15,7 @@ Global rules for the AI coding agents I use. They apply to every repository on m
 - **Location:** every repository lives in `~/Repos`, except `~/ROMs` and any repository an application needs at a fixed path.
 - **Commits:** [Conventional Commits](https://www.conventionalcommits.org/) in every repository, in English, lowercase, imperative mood.
 - **README:** every repository has `README.md` in English (the main one) and `README.es.md` in Spanish, each linking to the other.
+- **Context vault:** on "crea contexto", the agent updates my private notes vault; only I can publish it.
 - **Agent files:** `AGENTS.md` and `CLAUDE.md` are written in English.
 
 The full text is in [`AGENTS.md`](AGENTS.md).
