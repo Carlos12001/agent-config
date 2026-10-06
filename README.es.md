@@ -47,7 +47,7 @@ git clone git@github.com:Carlos12001/agent-config.git ~/Repos/agent-config
 ~/.claude/CLAUDE.md  →  ~/Repos/agent-config/AGENTS.md
 ```
 
-Si `~/.claude/CLAUDE.md` ya existe como archivo normal, antes se renombra a `CLAUDE.md.bak-<fecha>`; un enlace antiguo simplemente se reemplaza. Volver a ejecutar el script no cambia nada.
+Si `~/.claude/CLAUDE.md` ya existe como archivo normal, antes se mueve a `~/.local/state/backups/agent-config/CLAUDE.md.<fecha>.bak` (se guardan 5 como máximo, durante 30 días); un enlace antiguo simplemente se reemplaza. Volver a ejecutar el script no cambia nada.
 
 ### Windows
 
