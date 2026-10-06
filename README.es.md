@@ -12,7 +12,7 @@ Reglas globales para los agentes de IA de programación que uso. Se aplican a to
 
 ## Las reglas, en resumen
 
-- **Ubicación:** todo repositorio vive en `~/Repos`, salvo que una aplicación lo necesite en una ruta fija.
+- **Ubicación:** todo repositorio vive en `~/Repos`, excepto `~/ROMs` y los que una aplicación necesite en una ruta fija.
 - **Commits:** [Conventional Commits](https://www.conventionalcommits.org/) en todos los repositorios, en inglés, en minúscula y en imperativo.
 - **README:** todo repositorio tiene `README.md` en inglés (el principal) y `README.es.md` en español, cada uno con un enlace al otro.
 - **Archivos para agentes:** `AGENTS.md` y `CLAUDE.md` se escriben en inglés.

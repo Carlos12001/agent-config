@@ -7,7 +7,9 @@ These apply to every repository and project on this machine.
 All repositories are kept in `~/Repos` (`%USERPROFILE%\Repos` on Windows).
 
 - Clone and create repositories there. Do not create other folders for them, such as `~/Projects`.
-- The only exception is a repository that an application needs at a fixed path (for example RetroArch saves in `~/.config/retroarch/saves`). Leave those where they are.
+- Exceptions, which stay where they are:
+  - A repository that an application needs at a fixed path, such as RetroArch saves in `~/.config/retroarch/saves`.
+  - `~/ROMs`.
 - If you find a repository somewhere else without that reason, say so and offer to move it; do not move it on your own.
 
 ## Commits
