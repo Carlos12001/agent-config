@@ -113,11 +113,12 @@ rules above. In addition:
   updates when a note is renamed. When the path is long, the link is the last
   thing on its line.
 - Embed with `![text](path)`, not `![[file]]`.
-- Link only to a note that exists; create it first, even as a short stub.
+- A link to a note that does not exist yet is fine: write the path the note
+  will have.
 - Make Obsidian write links this way: in the vault's `.obsidian/app.json`, set
   `"useMarkdownLinks": true` and `"newLinkFormat": "relative"`.
 - Convert the wiki links you find in a vault you are asked to work on, and
-  check afterwards that every link points to a file that exists.
+  check afterwards that no link that worked before is broken.
 
 ## Temporary files and logs
 
