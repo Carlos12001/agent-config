@@ -1,7 +1,5 @@
 # Agent Config
 
-*[Español](README.es.md)*
-
 Global rules for the AI coding agents I use. They apply to every repository on
 my machines, so each project does not have to repeat them.
 
@@ -18,8 +16,8 @@ my machines, so each project does not have to repeat them.
   `saves`, which always sits inside RetroArch's configuration folder.
 - **Commits:** [Conventional Commits][cc] in every repository, in English,
   lowercase, imperative mood.
-- **README:** every repository has `README.md` in English (the main one) and
-  `README.es.md` in Spanish, each linking to the other.
+- **README:** every repository has one README, `README.md`, in English, with
+  no translations.
 - **Line length:** source files in any language (Rust, Python, C, C++, Markdown
   and so on) have lines of at most 80 columns, except lines that cannot be
   split, such as a URL or a table row.
@@ -96,8 +94,7 @@ from their own file; link or copy `AGENTS.md` there by hand.
 ## Changing a rule
 
 1. Edit `AGENTS.md`.
-2. Mirror the change in the summary of `README.md` and `README.es.md` if it
-   affects it.
+2. Mirror the change in the summary of `README.md` if it affects it.
 3. Commit with a Conventional Commits message and push.
 
 A repository can add its own rules in its `AGENTS.md` or `CLAUDE.md`; they

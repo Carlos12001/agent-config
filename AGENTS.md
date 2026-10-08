@@ -34,20 +34,14 @@ Use [Conventional Commits][cc] in every repository:
 
 ## README
 
-Every repository must have two READMEs:
+Every repository has one README, `README.md`, written in English so that any
+agent or person can read it.
 
-| File | Language | Role |
-| --- | --- | --- |
-| `README.md` | English | Main README, the source of truth, so that any agent or person can read it |
-| `README.es.md` | Spanish | Translation of `README.md` |
-
-- Create both if the repository has none; if only one exists, write the other.
-- Each file links to the other on the line under the title:
-  `*[Español](README.es.md)*` and `*[English](README.md)*`.
-- Update `README.md` first, then mirror the change in `README.es.md` in the same
-  commit. The two must never drift apart.
-- `AGENTS.md` and `CLAUDE.md` are written in English only.
-- Keep the READMEs updated in the same change that alters what they describe.
+- Create it if the repository has none.
+- Do not add a translation such as `README.es.md`: a second copy has to be kept
+  in step with the first and adds nothing. Remove one if you find it.
+- `AGENTS.md` and `CLAUDE.md` are written in English too.
+- Keep the README updated in the same change that alters what it describes.
 
 ## Line length
 
@@ -92,7 +86,7 @@ applies outside a repository too.
   paragraph and put `[label]: https://...` at the end of the file, one per line,
   with a short lowercase label. The text stays readable and a long URL never
   pushes a line past 80 columns. A link to a file in the same repository, such
-  as `[Español](README.es.md)`, stays inline.
+  as `[Agent instructions](AGENTS.md)`, stays inline.
 - Do not turn a rule off, or ignore a file, to hide an error. An exception needs
   a real reason, written as a comment next to it.
 - If `markdownlint-cli2` is not installed, install it (`markdownlint-cli2` in
