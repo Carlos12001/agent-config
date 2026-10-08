@@ -2,21 +2,36 @@
 
 *[English](README.md)*
 
-Reglas globales para los agentes de IA de programación que uso. Se aplican a todos los repositorios de mis equipos, para que cada proyecto no tenga que repetirlas.
+Reglas globales para los agentes de IA de programación que uso. Se aplican a
+todos los repositorios de mis equipos, para que cada proyecto no tenga que
+repetirlas.
 
 | Archivo | Qué es |
-|---|---|
+| --- | --- |
 | [`AGENTS.md`](AGENTS.md) | Las reglas. Única fuente de verdad |
 | `CLAUDE.md` | Importa `AGENTS.md`, para que Claude Code también aplique las reglas dentro de este repositorio |
 | `install.sh` | Enlaza las reglas en la configuración global del agente (Linux / macOS) |
 
 ## Las reglas, en resumen
 
-- **Ubicación:** todo repositorio vive en `~/Repos`, excepto `~/ROMs` y `saves`, que siempre va dentro de la carpeta de configuración de RetroArch.
-- **Commits:** [Conventional Commits](https://www.conventionalcommits.org/) en todos los repositorios, en inglés, en minúscula y en imperativo.
-- **README:** todo repositorio tiene `README.md` en inglés (el principal) y `README.es.md` en español, cada uno con un enlace al otro.
-- **Archivos temporales y logs:** no se deja nada en la carpeta personal ni dentro de un repositorio. Los temporales van en la carpeta temporal del sistema y se borran; los logs van donde el sistema operativo los espera (`~/.local/state/<app>/` en Linux, `%LOCALAPPDATA%\<App>\Logs\` en Windows), salvo que yo pida otro lugar. Antes de cambiar un archivo de configuración se hace un respaldo, que se guarda en una única carpeta fija (`~/.local/state/backups/<app>/`, o `%LOCALAPPDATA%\Backups\<App>\`), nunca junto al original, y se borra a los 30 días. Los logs y respaldos se mantienen pequeños y pocos (5 archivos como máximo), y `~/.config` y `~/.local/share` solo contienen lo que un programa necesita para funcionar.
-- **Bóveda de contexto:** existe una bóveda privada de contexto en `~/Repos/storyline`.
+- **Ubicación:** todo repositorio vive en `~/Repos`, excepto `~/ROMs` y `saves`,
+  que siempre va dentro de la carpeta de configuración de RetroArch.
+- **Commits:** [Conventional Commits](https://www.conventionalcommits.org/) en
+  todos los repositorios, en inglés, en minúscula y en imperativo.
+- **README:** todo repositorio tiene `README.md` en inglés (el principal) y
+  `README.es.md` en español, cada uno con un enlace al otro.
+- **Archivos temporales y logs:** no se deja nada en la carpeta personal ni
+  dentro de un repositorio. Los temporales van en la carpeta temporal del
+  sistema y se borran; los logs van donde el sistema operativo los espera
+  (`~/.local/state/<app>/` en Linux, `%LOCALAPPDATA%\<App>\Logs\` en Windows),
+  salvo que yo pida otro lugar. Antes de cambiar un archivo de configuración se
+  hace un respaldo, que se guarda en una única carpeta fija
+  (`~/.local/state/backups/<app>/`, o `%LOCALAPPDATA%\Backups\<App>\`), nunca
+  junto al original, y se borra a los 30 días. Los logs y respaldos se mantienen
+  pequeños y pocos (5 archivos como máximo), y `~/.config` y `~/.local/share`
+  solo contienen lo que un programa necesita para funcionar.
+- **Bóveda de contexto:** existe una bóveda privada de contexto en
+  `~/Repos/storyline`.
 - **Archivos para agentes:** `AGENTS.md` y `CLAUDE.md` se escriben en inglés.
 
 El texto completo está en [`AGENTS.md`](AGENTS.md).
@@ -24,13 +39,14 @@ El texto completo está en [`AGENTS.md`](AGENTS.md).
 ## Dónde aplican las reglas
 
 | Dónde | ¿Aplican? |
-|---|---|
+| --- | --- |
 | Claude Code en un equipo donde se ejecutó `install.sh` | Sí, en cualquier carpeta. Las reglas se leen al iniciar una sesión, así que un cambio llega a las sesiones nuevas, no a las ya abiertas |
 | Un equipo donde no se ejecutó `install.sh` | No |
 | Claude en la web o en la app del teléfono | No: esos chats no leen archivos del equipo |
 | Otros agentes (GitHub Copilot, OpenClaw, etc.) | No de forma global. Cada uno lee su propio archivo global; ver "Otros agentes" más abajo |
 
-Las reglas solo dicen que la bóveda de contexto existe. Sus notas no se cargan solas: un agente las lee cuando hacen falta.
+Las reglas solo dicen que la bóveda de contexto existe. Sus notas no se cargan
+solas: un agente las lee cuando hacen falta.
 
 ## Instalación
 
@@ -41,13 +57,17 @@ git clone git@github.com:Carlos12001/agent-config.git ~/Repos/agent-config
 ~/Repos/agent-config/install.sh
 ```
 
-`install.sh` crea este enlace simbólico, así que basta un `git pull` para actualizar las reglas:
+`install.sh` crea este enlace simbólico, así que basta un `git pull` para
+actualizar las reglas:
 
 ```text
 ~/.claude/CLAUDE.md  →  ~/Repos/agent-config/AGENTS.md
 ```
 
-Si `~/.claude/CLAUDE.md` ya existe como archivo normal, antes se mueve a `~/.local/state/backups/agent-config/CLAUDE.md.<fecha>.bak` (se guardan 5 como máximo, durante 30 días); un enlace antiguo simplemente se reemplaza. Volver a ejecutar el script no cambia nada.
+Si `~/.claude/CLAUDE.md` ya existe como archivo normal, antes se mueve a
+`~/.local/state/backups/agent-config/CLAUDE.md.<fecha>.bak` (se guardan 5 como
+máximo, durante 30 días); un enlace antiguo simplemente se reemplaza. Volver a
+ejecutar el script no cambia nada.
 
 ### Windows
 
@@ -63,7 +83,8 @@ Es una copia, no un enlace: repite el `Copy-Item` después de cada `git pull`.
 
 ### Otros agentes
 
-`install.sh` solo configura Claude Code. Los demás agentes leen sus reglas globales de su propio archivo; enlaza o copia `AGENTS.md` ahí a mano.
+`install.sh` solo configura Claude Code. Los demás agentes leen sus reglas
+globales de su propio archivo; enlaza o copia `AGENTS.md` ahí a mano.
 
 ## Cambiar una regla
 
@@ -71,4 +92,5 @@ Es una copia, no un enlace: repite el `Copy-Item` después de cada `git pull`.
 2. Refleja el cambio en el resumen de `README.md` y `README.es.md` si le afecta.
 3. Haz commit con un mensaje de Conventional Commits y súbelo.
 
-Un repositorio puede añadir sus propias reglas en su `AGENTS.md` o `CLAUDE.md`; amplían estas, no las reemplazan.
+Un repositorio puede añadir sus propias reglas en su `AGENTS.md` o `CLAUDE.md`;
+amplían estas, no las reemplazan.

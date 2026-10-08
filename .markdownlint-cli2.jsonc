@@ -1,0 +1,12 @@
+// Markdown rules for this repository. Run: markdownlint-cli2
+{
+  "config": {
+    "default": true,
+    // Lines stay within 80 columns. A table row cannot be wrapped.
+    "MD013": { "line_length": 80, "tables": false }
+  },
+  "globs": ["**/*.md"],
+  // CLAUDE.md only imports AGENTS.md, it is not a document.
+  "ignores": ["CLAUDE.md"],
+  "gitignore": true
+}

@@ -11,7 +11,8 @@ backup_dir="${XDG_STATE_HOME:-$HOME/.local/state}/backups/agent-config"
 prune_backups() {
   local name="$1"
   find "$backup_dir" -maxdepth 1 -type f -name "$name.*.bak" -mtime +30 -delete
-  find "$backup_dir" -maxdepth 1 -type f -name "$name.*.bak" -printf '%T@ %p\n' |
+  find "$backup_dir" -maxdepth 1 -type f -name "$name.*.bak" \
+    -printf '%T@ %p\n' |
     sort -rn | tail -n +6 | cut -d' ' -f2- | while IFS= read -r old_backup; do
       rm -f "$old_backup"
     done
@@ -27,12 +28,14 @@ link_rules() {
     return
   fi
 
-  # A link to somewhere else (for example the repository was moved) is just replaced
+  # A link to somewhere else (for example the repository was moved) is just
+  # replaced
   if [[ -L "$target" ]]; then
     rm "$target"
   fi
 
-  # Keep whatever was there before, in the fixed backups folder (never next to the original)
+  # Keep whatever was there before, in the fixed backups folder (never next to
+  # the original)
   if [[ -e "$target" ]]; then
     local backup
     mkdir -p "$backup_dir"
