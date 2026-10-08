@@ -17,17 +17,16 @@ repetirlas.
 
 - **Ubicación:** todo repositorio vive en `~/Repos`, excepto `~/ROMs` y `saves`,
   que siempre va dentro de la carpeta de configuración de RetroArch.
-- **Commits:** [Conventional Commits](https://www.conventionalcommits.org/) en
-  todos los repositorios, en inglés, en minúscula y en imperativo.
+- **Commits:** [Conventional Commits][cc] en todos los repositorios, en inglés,
+  en minúscula y en imperativo.
 - **README:** todo repositorio tiene `README.md` en inglés (el principal) y
   `README.es.md` en español, cada uno con un enlace al otro.
 - **Largo de línea:** los archivos fuente en cualquier lenguaje (Rust, Python,
   C, C++, Markdown, etc.) tienen líneas de 80 columnas como máximo, salvo las
   que no se pueden partir, como una URL o una fila de tabla.
-- **Markdown:** todo archivo Markdown pasa
-  [markdownlint](https://github.com/DavidAnson/markdownlint) con sus reglas por
-  defecto, ejecutado con `markdownlint-cli2`. Todo repositorio tiene un
-  `.markdownlint-cli2.jsonc` en su raíz.
+- **Markdown:** todo archivo Markdown pasa [markdownlint][mdl] con sus reglas
+  por defecto, ejecutado con `markdownlint-cli2`, y enlaza las URL por
+  referencia. Todo repositorio tiene un `.markdownlint-cli2.jsonc` en su raíz.
 - **Archivos temporales y logs:** no se deja nada en la carpeta personal ni
   dentro de un repositorio. Los temporales van en la carpeta temporal del
   sistema y se borran; los logs van donde el sistema operativo los espera
@@ -102,3 +101,6 @@ globales de su propio archivo; enlaza o copia `AGENTS.md` ahí a mano.
 
 Un repositorio puede añadir sus propias reglas en su `AGENTS.md` o `CLAUDE.md`;
 amplían estas, no las reemplazan.
+
+[cc]: https://www.conventionalcommits.org/
+[mdl]: https://github.com/DavidAnson/markdownlint

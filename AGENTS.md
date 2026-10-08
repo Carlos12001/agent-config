@@ -17,8 +17,7 @@ All repositories are kept in `~/Repos` (`%USERPROFILE%\Repos` on Windows).
 
 ## Commits
 
-Use [Conventional Commits](https://www.conventionalcommits.org/) in every
-repository:
+Use [Conventional Commits][cc] in every repository:
 
 ```text
 <type>: <summary>
@@ -68,10 +67,9 @@ Markdown.
 
 ## Markdown
 
-Every Markdown file you create or edit must pass
-[markdownlint](https://github.com/DavidAnson/markdownlint) with its default
-rules, so that all of them are written the same standard way. This applies
-outside a repository too.
+Every Markdown file you create or edit must pass [markdownlint][mdl] with its
+default rules, so that all of them are written the same standard way. This
+applies outside a repository too.
 
 - Run it with `markdownlint-cli2` before reporting the work as finished, and fix
   what it reports. `markdownlint-cli2 --fix` corrects most problems; wrap long
@@ -90,6 +88,11 @@ outside a repository too.
   }
   ```
 
+- Link to a URL with a reference, not inline: write `[text][label]` in the
+  paragraph and put `[label]: https://...` at the end of the file, one per line,
+  with a short lowercase label. The text stays readable and a long URL never
+  pushes a line past 80 columns. A link to a file in the same repository, such
+  as `[Español](README.es.md)`, stays inline.
 - Do not turn a rule off, or ignore a file, to hide an error. An exception needs
   a real reason, written as a comment next to it.
 - If `markdownlint-cli2` is not installed, install it (`markdownlint-cli2` in
@@ -188,3 +191,6 @@ what is not needed, and tell the owner what remains and why.
 
 A private context vault exists at `~/Repos/storyline`. Its own `AGENTS.md`
 explains how to use it.
+
+[cc]: https://www.conventionalcommits.org/
+[mdl]: https://github.com/DavidAnson/markdownlint
