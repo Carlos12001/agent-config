@@ -10,6 +10,7 @@ repetirlas.
 | --- | --- |
 | [`AGENTS.md`](AGENTS.md) | Las reglas. Única fuente de verdad |
 | `CLAUDE.md` | Importa `AGENTS.md`, para que Claude Code también aplique las reglas dentro de este repositorio |
+| `.markdownlint-cli2.jsonc` | Las reglas de lint de Markdown de este repositorio |
 | `install.sh` | Enlaza las reglas en la configuración global del agente (Linux / macOS) |
 
 ## Las reglas, en resumen
@@ -20,6 +21,13 @@ repetirlas.
   todos los repositorios, en inglés, en minúscula y en imperativo.
 - **README:** todo repositorio tiene `README.md` en inglés (el principal) y
   `README.es.md` en español, cada uno con un enlace al otro.
+- **Largo de línea:** los archivos fuente en cualquier lenguaje (Rust, Python,
+  C, C++, Markdown, etc.) tienen líneas de 80 columnas como máximo, salvo las
+  que no se pueden partir, como una URL o una fila de tabla.
+- **Markdown:** todo archivo Markdown pasa
+  [markdownlint](https://github.com/DavidAnson/markdownlint) con sus reglas por
+  defecto, ejecutado con `markdownlint-cli2`. Todo repositorio tiene un
+  `.markdownlint-cli2.jsonc` en su raíz.
 - **Archivos temporales y logs:** no se deja nada en la carpeta personal ni
   dentro de un repositorio. Los temporales van en la carpeta temporal del
   sistema y se borran; los logs van donde el sistema operativo los espera

@@ -9,6 +9,7 @@ my machines, so each project does not have to repeat them.
 | --- | --- |
 | [`AGENTS.md`](AGENTS.md) | The rules. Single source of truth |
 | `CLAUDE.md` | Imports `AGENTS.md`, so Claude Code also applies the rules inside this repository |
+| `.markdownlint-cli2.jsonc` | The Markdown lint rules for this repository |
 | `install.sh` | Links the rules into the agent's global configuration (Linux / macOS) |
 
 ## The rules, in short
@@ -19,6 +20,13 @@ my machines, so each project does not have to repeat them.
   every repository, in English, lowercase, imperative mood.
 - **README:** every repository has `README.md` in English (the main one) and
   `README.es.md` in Spanish, each linking to the other.
+- **Line length:** source files in any language (Rust, Python, C, C++, Markdown
+  and so on) have lines of at most 80 columns, except lines that cannot be
+  split, such as a URL or a table row.
+- **Markdown:** every Markdown file passes
+  [markdownlint](https://github.com/DavidAnson/markdownlint) with its default
+  rules, run with `markdownlint-cli2`. Every repository has a
+  `.markdownlint-cli2.jsonc` at its root.
 - **Temporary files and logs:** nothing is left in the home folder or in a
   repository. Temporary files go in the system's temporary folder and are
   removed; logs go where the operating system expects them

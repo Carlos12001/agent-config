@@ -50,6 +50,52 @@ Every repository must have two READMEs:
 - `AGENTS.md` and `CLAUDE.md` are written in English only.
 - Keep the READMEs updated in the same change that alters what they describe.
 
+## Line length
+
+Write every source file with lines of at most 80 columns. This covers code in
+any language (Rust, Python, C, C++, shell and so on), configuration files and
+Markdown.
+
+- Break the line instead of going over the limit.
+- When a project has a formatter, set it to 80 so that it agrees with this rule:
+  `max_width = 80` for rustfmt, `line-length = 80` for Ruff or Black,
+  `ColumnLimit: 80` for clang-format.
+- Only a line that cannot be split may be longer: a URL, a Markdown table row,
+  or a string or path that would stop working if it were wrapped.
+- If a repository already sets another limit in its formatter or linter
+  configuration, that limit applies there.
+- Do not rewrap vendored or generated files.
+
+## Markdown
+
+Every Markdown file you create or edit must pass
+[markdownlint](https://github.com/DavidAnson/markdownlint) with its default
+rules, so that all of them are written the same standard way. This applies
+outside a repository too.
+
+- Run it with `markdownlint-cli2` before reporting the work as finished, and fix
+  what it reports. `markdownlint-cli2 --fix` corrects most problems; wrap long
+  lines by hand.
+- Every repository has a `.markdownlint-cli2.jsonc` at its root. Create it if it
+  is missing:
+
+  ```jsonc
+  {
+    "config": {
+      "default": true,
+      "MD013": { "line_length": 80, "tables": false }
+    },
+    "globs": ["**/*.md"],
+    "gitignore": true
+  }
+  ```
+
+- Do not turn a rule off, or ignore a file, to hide an error. An exception needs
+  a real reason, written as a comment next to it.
+- If `markdownlint-cli2` is not installed, install it (`markdownlint-cli2` in
+  the Arch repositories, `npm install -g markdownlint-cli2` elsewhere). If you
+  cannot, say that the files were not linted.
+
 ## Temporary files and logs
 
 Never leave files where they do not belong. Do not write logs, temporary files,
