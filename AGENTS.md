@@ -99,6 +99,26 @@ applies outside a repository too.
   the Arch repositories, `npm install -g markdownlint-cli2` elsewhere). If you
   cannot, say that the files were not linted.
 
+## Obsidian vaults
+
+A vault is a folder of Markdown like any other, so its notes follow the Markdown
+rules above. In addition:
+
+- Link notes with standard Markdown links, never with `[[wiki links]]`:
+  `[Note Name](../Folder/Note%20Name.md)`. They work on GitHub, in any editor
+  and for any agent, and a tool can check them.
+- The path is relative to the note that holds the link, and each space in it is
+  written as `%20`.
+- A link to a note stays inline: it is the form Obsidian writes itself and
+  updates when a note is renamed. When the path is long, the link is the last
+  thing on its line.
+- Embed with `![text](path)`, not `![[file]]`.
+- Link only to a note that exists; create it first, even as a short stub.
+- Make Obsidian write links this way: in the vault's `.obsidian/app.json`, set
+  `"useMarkdownLinks": true` and `"newLinkFormat": "relative"`.
+- Convert the wiki links you find in a vault you are asked to work on, and
+  check afterwards that every link points to a file that exists.
+
 ## Temporary files and logs
 
 Never leave files where they do not belong. Do not write logs, temporary files,

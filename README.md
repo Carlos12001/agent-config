@@ -26,6 +26,8 @@ my machines, so each project does not have to repeat them.
 - **Markdown:** every Markdown file passes [markdownlint][mdl] with its default
   rules, run with `markdownlint-cli2`, and links to a URL by reference. Every
   repository has a `.markdownlint-cli2.jsonc` at its root.
+- **Obsidian vaults:** notes are linked with standard Markdown links
+  (`[Note](Folder/Note.md)`, relative path), never with `[[wiki links]]`.
 - **Temporary files and logs:** nothing is left in the home folder or in a
   repository. Temporary files go in the system's temporary folder and are
   removed; logs go where the operating system expects them

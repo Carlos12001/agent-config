@@ -27,6 +27,8 @@ repetirlas.
 - **Markdown:** todo archivo Markdown pasa [markdownlint][mdl] con sus reglas
   por defecto, ejecutado con `markdownlint-cli2`, y enlaza las URL por
   referencia. Todo repositorio tiene un `.markdownlint-cli2.jsonc` en su raíz.
+- **Bóvedas de Obsidian:** las notas se enlazan con enlaces Markdown estándar
+  (`[Nota](Carpeta/Nota.md)`, ruta relativa), nunca con `[[enlaces wiki]]`.
 - **Archivos temporales y logs:** no se deja nada en la carpeta personal ni
   dentro de un repositorio. Los temporales van en la carpeta temporal del
   sistema y se borran; los logs van donde el sistema operativo los espera
