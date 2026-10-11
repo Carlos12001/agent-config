@@ -29,6 +29,10 @@ Use [Conventional Commits][cc] in every repository:
   `perf`, `style`.
 - No scope unless the repository already uses them.
 - One logical change per commit.
+- Push every commit as soon as it is made, without asking first. A commit
+  that stays only on this machine is not finished work.
+- The one exception is the context vault, `~/Repos/storyline`: commit there
+  and do not push. The owner pushes it with `storyline push`.
 - A repository's own `AGENTS.md` or `CLAUDE.md` may add rules (for example a
   fixed message for generated commits); it does not replace this convention.
 

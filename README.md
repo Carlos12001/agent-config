@@ -15,7 +15,8 @@ my machines, so each project does not have to repeat them.
 - **Location:** every repository lives in `~/Repos`, except `~/ROMs` and
   `saves`, which always sits inside RetroArch's configuration folder.
 - **Commits:** [Conventional Commits][cc] in every repository, in English,
-  lowercase, imperative mood.
+  lowercase, imperative mood. Every commit is pushed right away, except in
+  the context vault, which I push myself.
 - **README:** every repository has one README, `README.md`, in English, with
   no translations.
 - **Line length:** source files in any language (Rust, Python, C, C++, Markdown
