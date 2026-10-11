@@ -36,6 +36,10 @@ my machines, so each project does not have to repeat them.
   next to the original, and removed after 30 days. Logs and backups are kept
   small and few (5 files at most), and `~/.config` and `~/.local/share` hold
   only what a program needs to work.
+- **Personal folders:** in `Documents`, `Pictures`, `Videos` and `Music`, what
+  is mine goes in `Synced/` (goes online, to every device) or `Local/` (never
+  uploaded, only copied to the external drive). The rest belongs to other
+  programs and is not backed up.
 - **Context vault:** a private context vault exists at `~/Repos/storyline`.
 - **Agent files:** `AGENTS.md` and `CLAUDE.md` are written in English.
 

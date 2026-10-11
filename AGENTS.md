@@ -202,6 +202,33 @@ would break without it. If not, it does not belong there.
 List what you created outside the repository you were asked to work in, remove
 what is not needed, and tell the owner what remains and why.
 
+## Personal folders
+
+Other programs write on their own into `Documents`, `Pictures`, `Videos` and
+`Music` in the home folder, so those folders are never synchronized or backed
+up whole. What belongs to the owner goes in one of two subfolders of each:
+
+| Subfolder | Meaning | Where it is copied |
+| --- | --- | --- |
+| `Synced/` | Goes online and reaches every device | pCloud and the external drive |
+| `Local/` | Never leaves for the cloud | The external drive only |
+
+- The name is the rule. Every folder named `Synced` is part of the cloud
+  sync: when you create one, add it to the sync in the same change. Nothing
+  inside a folder named `Local` is ever uploaded, to any service.
+- `Local/` is for sensitive files: identity documents, finance, security
+  codes. When in doubt about a file, ask before putting it in `Synced/`.
+- Whatever sits outside both subfolders belongs to the programs and is not
+  backed up. Do not move a program's files into them.
+- Do not add folders to the home folder for personal files. Use the `Synced/`
+  or `Local/` of the folder that fits.
+- A file too heavy for the cloud plan does not go in `Synced/`. It lives on
+  the external drive, outside its `Backup/` folder.
+- The tools are in `~/Repos/homesync`: `cloudsync` for pCloud and `homesync`
+  for the external drive `CarlosHD`. The drive explains its own structure in
+  the `README.md` and `AGENTS.md` at its root; read them before changing
+  anything there.
+
 ## Context vault
 
 A private context vault exists at `~/Repos/storyline`. Its own `AGENTS.md`
