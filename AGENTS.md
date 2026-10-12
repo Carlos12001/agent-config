@@ -221,7 +221,9 @@ up whole. What belongs to the owner goes in one of two subfolders of each:
   sync: when you create one, add it to the sync in the same change. Nothing
   inside a folder named `Local` is ever uploaded, to any service.
 - `Local/` is for sensitive files: identity documents, finance, security
-  codes. When in doubt about a file, ask before putting it in `Synced/`.
+  codes. When in doubt about a file, ask before putting it in `Synced/`. It
+  also holds what does not need to be online, such as the book library in
+  `Documents/Local/Library`.
 - Whatever sits outside both subfolders belongs to the programs and is not
   backed up. Do not move a program's files into them.
 - Do not add folders to the home folder for personal files. Use the `Synced/`
