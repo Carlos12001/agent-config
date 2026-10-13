@@ -231,7 +231,8 @@ up whole. What belongs to the owner goes in one of two subfolders of each:
 - A file too heavy for the cloud plan does not go in `Synced/`. It lives on
   the external drive, outside its `Backup/` folder.
 - The tools are in `~/Repos/homesync`: `cloudsync` for pCloud and `homesync`
-  for the external drive `CarlosHD`. The drive explains its own structure in
+  for the external drive `CarlosHD`. Its `INSTALL.md` has the steps to set
+  all of this up on a Linux laptop and on an Android device. The drive explains its own structure in
   the `README.md` and `AGENTS.md` at its root; read them before changing
   anything there.
 
